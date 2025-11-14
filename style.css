@@ -1,0 +1,153 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0 20px 20px 20px;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    padding: 0 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+#bookmarks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#tabs-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab-button {
+    padding: 15px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+}
+
+.tab-button.active {
+    border-bottom-color: #0078d4;
+    font-weight: 600;
+}
+
+#tab-panels-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.tab-panel {
+    display: none;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.tab-panel.active {
+    display: flex;
+}
+
+.folder-group {
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+.top-level-folder-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+.folder-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eeeeee70;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    padding-right: 20px; /* Make space for the icon */
+}
+
+.folder-title::after {
+    content: '−';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #888;
+}
+
+.collapsed > .folder-title::after {
+    content: '+';
+}
+
+.collapsed > .top-level-folder-content,
+.collapsed > .folder-items {
+    display: none;
+}
+
+.folder-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 160px;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: fit-content;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.card-title {
+    font-weight: 500;
+    font-size: 1em;
+    text-align: left;
+}
